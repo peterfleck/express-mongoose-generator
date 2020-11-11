@@ -1,30 +1,11 @@
-var express = require('express');
-var router = express.Router();
-var {controllerName} = require({controllerPath});
+import { Router } from 'express';
+const router = Router();
+import {list, show, create, update, remove} from "{controllerPath}";
 
-/*
- * GET
- */
-router.get('/', {controllerName}.list);
+router.get('/', list);
+router.get('/:id', show);
+router.post('/', create);
+router.put('/:id', update);
+router.delete('/:id', remove);
 
-/*
- * GET
- */
-router.get('/:id', {controllerName}.show);
-
-/*
- * POST
- */
-router.post('/', {controllerName}.create);
-
-/*
- * PUT
- */
-router.put('/:id', {controllerName}.update);
-
-/*
- * DELETE
- */
-router.delete('/:id', {controllerName}.remove);
-
-module.exports = router;
+export default router;

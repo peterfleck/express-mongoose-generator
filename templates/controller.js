@@ -1,16 +1,6 @@
-var {modelName} = require({modelPath});
+import {modelName} from "{modelPath}";
 
-/**
- * {controllerName}.js
- *
- * @description :: Server-side logic for managing {pluralName}.
- */
-module.exports = {
-
-    /**
-     * {controllerName}.list()
-     */
-    list: function (req, res) {
+    export function list (req, res) {
         {modelName}.find(function (err, {pluralName}) {
             if (err) {
                 return res.status(500).json({
@@ -20,12 +10,10 @@ module.exports = {
             }
             return res.json({pluralName});
         });
-    },
+    }
 
-    /**
-     * {controllerName}.show()
-     */
-    show: function (req, res) {
+
+    export function show (req, res) {
         var id = req.params.id;
         {modelName}.findOne({_id: id}, function (err, {name}) {
             if (err) {
@@ -41,12 +29,9 @@ module.exports = {
             }
             return res.json({name});
         });
-    },
+    }
 
-    /**
-     * {controllerName}.create()
-     */
-    create: function (req, res) {
+    export function create (req, res) {
         var {name} = new {modelName}({{createFields}
         });
 
@@ -59,12 +44,9 @@ module.exports = {
             }
             return res.status(201).json({name});
         });
-    },
+    }
 
-    /**
-     * {controllerName}.update()
-     */
-    update: function (req, res) {
+    export function update (req, res) {
         var id = req.params.id;
         {modelName}.findOne({_id: id}, function (err, {name}) {
             if (err) {
@@ -91,12 +73,9 @@ module.exports = {
                 return res.json({name});
             });
         });
-    },
+    }
 
-    /**
-     * {controllerName}.remove()
-     */
-    remove: function (req, res) {
+    export function remove (req, res) {
         var id = req.params.id;
         {modelName}.findByIdAndRemove(id, function (err, {name}) {
             if (err) {
@@ -108,4 +87,4 @@ module.exports = {
             return res.status(204).json();
         });
     }
-};
+

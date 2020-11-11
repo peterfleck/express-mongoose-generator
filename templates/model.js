@@ -1,6 +1,5 @@
-var mongoose = require('mongoose');
-var Schema   = mongoose.Schema;
+import mongoose from 'mongoose';
 
-var {schemaName} = new Schema({fields});
+const {schemaName} = new mongoose.Schema({fields}, {timestamps: true});
 
-module.exports = mongoose.model('{modelName}', {schemaName});
+export default mongoose.model('{modelName}', {schemaName});
