@@ -1,4 +1,4 @@
-import {modelName} from "{modelPath}";
+import {modelName} from {modelPath};
 
     export function list (req, res) {
         {modelName}.find(function (err, {pluralName}) {

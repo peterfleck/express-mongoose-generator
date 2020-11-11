@@ -1,6 +1,6 @@
 import { Router } from 'express';
 const router = Router();
-import {list, show, create, update, remove} from "{controllerPath}";
+import {list, show, create, update, remove} from {controllerPath};
 
 router.get('/', list);
 router.get('/:id', show);
