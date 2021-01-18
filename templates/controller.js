@@ -14,7 +14,7 @@ import {modelName} from {modelPath};
 
 
     export function show (req, res) {
-        var id = req.params.id;
+        let id = req.params.id;
         {modelName}.findOne({_id: id}, function (err, {name}) {
             if (err) {
                 return res.status(500).json({
@@ -32,7 +32,7 @@ import {modelName} from {modelPath};
     }
 
     export function create (req, res) {
-        var {name} = new {modelName}({{createFields}
+        let {name} = new {modelName}({{createFields}
         });
 
         {name}.save(function (err, {name}) {
@@ -47,7 +47,7 @@ import {modelName} from {modelPath};
     }
 
     export function update (req, res) {
-        var id = req.params.id;
+        let id = req.params.id;
         {modelName}.findOne({_id: id}, function (err, {name}) {
             if (err) {
                 return res.status(500).json({
@@ -76,7 +76,7 @@ import {modelName} from {modelPath};
     }
 
     export function remove (req, res) {
-        var id = req.params.id;
+        let id = req.params.id;
         {modelName}.findByIdAndRemove(id, function (err, {name}) {
             if (err) {
                 return res.status(500).json({
